@@ -1,0 +1,56 @@
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+ul {
+  padding: 0;
+}
+
+.container {
+  width: 920px;
+  padding: 40px;
+}
+.container-form {
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  /* border-radius: 1px solid black; */
+}
+.container-form > label {
+  margin-bottom: 20px;
+  font-weight: 600;
+  font-size: 24px;
+}
+.container-form > input {
+  padding: 20px;
+}
+.container-form > button {
+  width: 30%;
+  border: none;
+  padding: 10px 15px;
+  background-color: rgb(216, 219, 216);
+  color: #000;
+  font-weight: 600;
+  margin: 16px;
+  margin-left: 0;
+  margin-right: 0;
+  font-family: inherit;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 1px 2px 2px 0 rgb(0 0 0/0.5);
+  transition: box-shadow 250ms linear;
+  border-radius: 8px;
+}
+
+.container-form > button:active {
+  box-shadow: 2px 5px 2px 0 rgb(0 0 0/0.5);
+}
