@@ -7,6 +7,7 @@ import { nanoid } from 'nanoid';
 class App extends Component {
   state = {
     contacts: [],
+    filter: '',
     name: '',
     number: '',
   };
@@ -17,6 +18,7 @@ class App extends Component {
       [name]: value,
     });
   };
+
   handleSubmit = e => {
     e.preventDefault();
     const newUser = {
@@ -33,8 +35,18 @@ class App extends Component {
     this.setState({ name: '', number: '' });
   };
 
+  findFilter = () => {
+    const { contacts, filter } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    return contacts.filter(contact =>
+      contact.name.toLowerCase().includes(normalizedFilter)
+    );
+  };
+
   render() {
-    const { contacts } = this.state;
+    const { contacts, filter } = this.state;
+
+    const filterContacts = this.findFilter();
     return (
       <div className="container">
         <Header title="Phonebook" />
@@ -61,8 +73,16 @@ class App extends Component {
           />
           <button type="submit">Add contact</button>
         </form>
+        <div>
+          <input
+            type="text"
+            name="filter"
+            value={filter}
+            onChange={this.handlChange}
+          />
+        </div>
         <Header titleContacts="Contacts" />
-        <ContactList contacts={contacts} />
+        <ContactList contacts={filterContacts} />
       </div>
     );
   }
