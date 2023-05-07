@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Header({ title, titleContacts }) {
   return (
     <>
@@ -6,5 +8,8 @@ function Header({ title, titleContacts }) {
     </>
   );
 }
-
+Header.propTypes = {
+  title: PropTypes.string,
+  titleContacts: PropTypes.string,
+};
 export default Header;
