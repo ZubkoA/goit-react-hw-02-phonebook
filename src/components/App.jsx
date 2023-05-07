@@ -24,15 +24,11 @@ class App extends Component {
       id: nanoid(),
       ...data,
     };
-    console.log(newContact.name);
-
-    this.setState(prevState => {
-      return { contacts: [...prevState.contacts, newContact] };
-    });
-    this.reset();
-  };
-  reset = () => {
-    this.setState({ name: '', number: '' });
+    this.state.contacts.some(contact => contact.name === newContact.name)
+      ? alert(`${newContact.name} is already in contacts.`)
+      : this.setState(prevState => {
+          return { contacts: [...prevState.contacts, newContact] };
+        });
   };
 
   findFilter = () => {

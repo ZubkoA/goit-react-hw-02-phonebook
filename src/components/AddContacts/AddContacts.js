@@ -16,8 +16,11 @@ export class AddContacts extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addContact({ ...this.state });
+    this.reset();
   };
-
+  reset = () => {
+    this.setState({ name: '', number: '' });
+  };
   render() {
     const { name, number } = this.state;
     return (
