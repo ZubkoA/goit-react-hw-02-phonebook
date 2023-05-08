@@ -6,7 +6,7 @@ export class AddContacts extends Component {
     name: '',
     number: '',
   };
-  nameInputId = nanoid();
+
   handleChange = e => {
     const { name, value } = e.target;
     this.setState({
@@ -16,16 +16,13 @@ export class AddContacts extends Component {
   handleSubmit = e => {
     e.preventDefault();
     this.props.addContact({ ...this.state });
-    this.reset();
   };
-  reset = () => {
-    this.setState({ name: '', number: '' });
-  };
+
   render() {
     const { name, number } = this.state;
     return (
       <form className="container-form" onSubmit={this.handleSubmit}>
-        <label htmlFor={this.nameInputId}>Name</label>
+        <label htmlFor={nanoid()}>Name</label>
         <input
           type="text"
           name="name"
@@ -35,7 +32,7 @@ export class AddContacts extends Component {
           value={name}
           required
         />
-        <label htmlFor={this.nameInputId}>Number</label>
+        <label htmlFor={nanoid()}>Number</label>
         <input
           type="tel"
           name="number"
