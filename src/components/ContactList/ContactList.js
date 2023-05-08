@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ListElement from '../ListElement/ListElement';
-import './ContactList.css';
+import css from './ContactList.module.css';
 
 const ContactList = ({ contacts, deleteContact }) => (
-  <ul className="contacts">
+  <ul className={css.contacts}>
     {contacts.map(({ name, id, number }) => (
-      <li className="contacts__item" key={id}>
+      <li className={css.contacts__item} key={id}>
         <ListElement
           name={name}
           number={number}

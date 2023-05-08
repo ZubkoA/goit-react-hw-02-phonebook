@@ -1,20 +1,9 @@
-.contacts {
-  width: 400px;
-}
-
-.contacts__item {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-}
-
 .contacts__text {
   font-weight: 600;
   font-size: 16px;
 }
 
-.contacts__item > button {
+.contacts__btn {
   background-color: rgb(216, 219, 216);
   color: #000;
   font-weight: 600;
@@ -27,6 +16,6 @@
   border-radius: 8px;
 }
 
-.contacts__item > button:active {
+.contacts__btn:active {
   box-shadow: 2px 5px 2px 0 rgb(0 0 0/0.5);
 }

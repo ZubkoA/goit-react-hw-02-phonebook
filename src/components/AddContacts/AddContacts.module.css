@@ -1,38 +1,19 @@
-h1,
-h2,
-h3,
-p {
-  margin: 0;
-  padding: 0;
-}
-
-li {
-  list-style: none;
-}
-ul {
-  padding: 0;
-}
-
-.container {
-  width: 920px;
-  padding: 40px;
-}
-.container-form {
+.container__form {
   width: 400px;
   display: flex;
   flex-direction: column;
   padding: 20px;
   /* border-radius: 1px solid black; */
 }
-.container-form > label {
+.container__form > label {
   margin-bottom: 20px;
   font-weight: 600;
   font-size: 24px;
 }
-.container-form > input {
+.container__form > input {
   padding: 20px;
 }
-.container-form > button {
+.container__form > button {
   width: 30%;
   border: none;
   padding: 10px 15px;
@@ -51,6 +32,6 @@ ul {
   border-radius: 8px;
 }
 
-.container-form > button:active {
+.container__form > button:active {
   box-shadow: 2px 5px 2px 0 rgb(0 0 0/0.5);
 }

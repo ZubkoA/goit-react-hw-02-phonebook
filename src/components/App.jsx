@@ -4,7 +4,7 @@ import ContactList from './ContactList/ContactList';
 import Filter from './Filter/Filter';
 import { AddContacts } from './AddContacts/AddContacts';
 import { nanoid } from 'nanoid';
-import './App.css';
+import css from './App.module.css';
 
 class App extends Component {
   state = {
@@ -51,7 +51,7 @@ class App extends Component {
     const { filter } = this.state;
     const filterContacts = this.findFilter();
     return (
-      <div className="container">
+      <div className={css.container}>
         <Header title="Phonebook" />
         <AddContacts addContact={this.addContact} />
         <Filter value={filter} onChange={this.handleChange} />
