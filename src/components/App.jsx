@@ -58,7 +58,9 @@ class App extends Component {
         <Header titleContacts="Contacts" />
         <ContactList
           contacts={filterContacts}
-          deleteContact={this.deleteContact}
+          deleteContact={() => {
+            this.deleteContact();
+          }}
         />
       </div>
     );
