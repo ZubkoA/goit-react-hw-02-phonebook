@@ -48,7 +48,7 @@ class App extends Component {
   };
 
   render() {
-    const { filter } = this.state;
+    const { filter, contacts } = this.state;
     const filterContacts = this.findFilter();
     return (
       <div className={css.container}>
@@ -58,7 +58,7 @@ class App extends Component {
         <Header titleContacts="Contacts" />
         <ContactList
           contacts={filterContacts}
-          deleteContact={this.deleteContact}
+          deleteContact={this.deleteContact(contacts.id)}
         />
       </div>
     );
